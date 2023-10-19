@@ -1,0 +1,18 @@
+version: '3'
+services:
+  country-info:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: country-info
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres_db
+    networks:
+      - datalayer_apidb_network
+
+networks:
+  datalayer_apidb_network:
+    external:
+      name: datalayer_apidb_network
