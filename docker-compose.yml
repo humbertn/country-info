@@ -10,9 +10,12 @@ services:
     depends_on:
       - postgres_db
     networks:
-      - datalayer_apidb_network
+      - datalayer_country_network
+      - api_network
 
 networks:
-  datalayer_apidb_network:
+  datalayer_country_network:
     external:
-      name: datalayer_apidb_network
+      name: datalayer_country_network
+  api_network:
+    driver: bridge

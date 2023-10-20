@@ -1,8 +1,11 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 const dataService = require('./database-service');
 
 const PORT = 3000;
+
+app.use(cors());
 
 // GET All states
 app.get('/state', (req, res) => {           
